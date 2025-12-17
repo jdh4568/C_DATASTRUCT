@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "트리", "트리.vcxproj", "{9390B11B-2F0D-4596-8EF8-628A886C5947}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Debug|x64.ActiveCfg = Debug|x64
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Debug|x64.Build.0 = Debug|x64
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Debug|x86.ActiveCfg = Debug|Win32
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Debug|x86.Build.0 = Debug|Win32
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Release|x64.ActiveCfg = Release|x64
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Release|x64.Build.0 = Release|x64
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Release|x86.ActiveCfg = Release|Win32
+		{9390B11B-2F0D-4596-8EF8-628A886C5947}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC8DF68A-B89D-4BA3-8ADB-B9B2CA3F8725}
+	EndGlobalSection
+EndGlobal
