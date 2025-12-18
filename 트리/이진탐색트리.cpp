@@ -17,31 +17,31 @@ typedef struct node {
    존재하지 않으면 NULL 반환
    ===================================================== */
 node *search(node *root, int key) {
-    if (!root) return NULL;
+    if (!root) return NULL; // 트리가 비어있으면 NULL 반환
 
-    if (key == root->data)
+    if (key == root->data)  // 키가 존재하면 노드 반환
         return root;
 
-    if (key < root->data)
+    if (key < root->data)   // 키가 작으면 왼쪽 서브트리 탐색
         return search(root->left_child, key);
 
-    return search(root->right_child, key);
+    return search(root->right_child, key);  // 키가 크면 오른쪽 서브트리 탐색
 }
 
 /* =====================================================
    탐색 연산 (반복 방식)
    ===================================================== */
 node *iterSearch(node *tree, int key) {
-    while (tree != NULL) {
-        if (key == tree->data)
+    while (tree != NULL) {  // 트리가 비어있지 않으면 반복
+        if (key == tree->data)  // 키가 존재하면 노드 반환
             return tree;
 
-        if (key < tree->data)
+        if (key < tree->data)   // 키가 작으면 왼쪽 서브트리로 이동
             tree = tree->left_child;
-        else
+        else    // 키가 크면 오른쪽 서브트리로 이동
             tree = tree->right_child;
     }
-    return NULL;
+    return NULL;    // 키가 없으면 NULL 반환
 }
 
 /* =====================================================
@@ -50,16 +50,16 @@ node *iterSearch(node *tree, int key) {
    중복 키일 경우 NULL 반환
    ===================================================== */
 node *modified_search(node *root, int key) {
-    for (node *ptr = root; ptr != NULL; ) {
+    for (node *ptr = root; ptr != NULL; ) { // 트리가 비어있지 않으면 반복
         if (ptr->data == key)
-            return NULL; // 중복 키
+            return NULL; // 중복 키 존재시 NULL 반환
 
-        if (key < ptr->data) {
-            if (ptr->left_child == NULL) return ptr;
-            ptr = ptr->left_child;
+        if (key < ptr->data) {  // 키가 데이터보다 작으면
+            if (ptr->left_child == NULL) return ptr;    // 왼쪽 자식 노드가 NULL이면 현재 노드 반환
+            ptr = ptr->left_child; // 왼쪽 자식 노드로 이동
         } else {
-            if (ptr->right_child == NULL) return ptr;
-            ptr = ptr->right_child;
+            if (ptr->right_child == NULL) return ptr;   // 오른쪽 자식 노드가 NULL이면 현재 노드 반환
+            ptr = ptr->right_child; // 오른쪽 자식 노드로 이동
         }
     }
     return NULL; // 트리가 비어 있는 경우
@@ -69,13 +69,13 @@ node *modified_search(node *root, int key) {
    삽입 연산
    새로운 키 값을 BST에 삽입
    ===================================================== */
-void insert_node(node **root, int num) {
+void insert_node(node **root, int num) {    // 트리의 값을 바꿀때는 이중 포인터 사용
     node *parent, *ptr;
 
     parent = modified_search(*root, num);
 
     /* 중복 키가 아니거나 트리가 비어 있는 경우만 삽입 */
-    if (parent || !(*root)) {
+    if (parent || !(*root)) {   //
         ptr = (node *)malloc(sizeof(node));
         ptr->data = num;
         ptr->left_child = ptr->right_child = NULL;
